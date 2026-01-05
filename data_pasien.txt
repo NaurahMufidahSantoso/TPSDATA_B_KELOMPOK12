@@ -1,0 +1,27 @@
+1|3276012300010001|Fluffy|Kucing|Pendaftaran|2|Menunggu|Demam
+2|3276012300010002|Bruno|Anjing|Pendaftaran|1|Menunggu|Lemas
+3|3276012300010003|Milo|Kucing|Selesai|2|Selesai|Muntah
+4|3276012300010004|Rocky|Anjing|Rawat Inap|1|Dirawat|Cedera kaki
+5|3276012300010005|Luna|Kelinci|Pendaftaran|3|Menunggu|Tidak mau makan
+6|3276012300010006|Max|Kucing|RawatInap|1|Dirawat|Infeksi mata
+7|3276012300010007|Bella|Anjing|Rawat Inap|2|Dirawat|Pasca operasi
+8|3276012300010008|Charlie|Kucing|Pendaftaran|3|Menunggu|Batuk
+9|3276012300010009|Oscar|Hamster|Pemeriksaan|2|Selesai|Check up
+10|3276012300010010|Daisy|Anjing|Pendaftaran|1|Menunggu|Luka terbuka
+11|3276012300010011|Coco|Kucing|Pendaftaran|2|Menunggu|Diare
+12|3276012300010012|Buddy|Anjing|Selesai|1|Selesai|Demam tinggi
+13|3276012300010013|Nala|Kucing|Rawat Inap|2|Dirawat|Pasca steril
+14|3276012300010014|Simba|Kucing|Pendaftaran|3|Menunggu|Bulu rontok
+15|3276012300010015|Leo|Iguana|Pemeriksaan|2|Selesai|Kontrol rutin
+16|3276012300010016|Molly|Anjing|Pendaftaran|1|Menunggu|Luka ringan
+17|3276012300010017|Oreo|Kucing|Pemeriksaan|2|Diperiksa|Flu
+18|3276012300010018|Bubu|Kelinci|Rawat Inap|3|Dirawat|Gangguan pencernaan
+19|3276012300010019|Snowy|Kucing|Pendaftaran|2|Menunggu|Mata berair
+20|3276012300010020|Jack|Anjing|Pemeriksaan|1|Diperiksa|Infeksi telinga
+21|3276012300010021|Loki|Kucing|Rawat Inap|1|Dirawat|Pasca kecelakaan
+22|3276012300010022|Poppy|Hamster|Pemeriksaan|3|Selesai|Check up
+23|3276012300010023|Shadow|Anjing|Pendaftaran|2|Menunggu|Batuk
+24|3276012300010024|Kiki|Burung|Pemeriksaan|2|Diperiksa|Sayap lemah
+25|3276012300010025|Zoe|Kucing|Pendaftaran|1|Menunggu|Tidak nafsu makan
+26|3211115335|Wini|Bunglon|Pendaftaran|2|Menunggu|lemas
+27|3276012300099999|Dino|Iguana|Pendaftaran|2|Menunggu|Lemas
