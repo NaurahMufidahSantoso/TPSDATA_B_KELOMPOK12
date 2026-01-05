@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Ceria Pets</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="login-body">
+
+<div class="login-box">
+  <h2>🐾 Ceria Pets</h2>
+  <p>Login Sistem Klinik</p>
+
+  <input id="username" placeholder="Username">
+  <input id="password" type="password" placeholder="Password">
+
+  <button onclick="login()">Login</button>
+</div>
+
+<script>
+function login(){
+  const u = username.value;
+  const p = password.value;
+
+  if(u==="admin" && p==="admin123"){
+    localStorage.setItem("role","admin");
+    location.href="dashboard.html";
+  }
+  else if(u==="user" && p==="user123"){
+    localStorage.setItem("role","user");
+    location.href="dashboard.html";
+  }
+  else{
+    alert("Username atau password salah");
+  }
+}
+</script>
+
+</body>
+</html>

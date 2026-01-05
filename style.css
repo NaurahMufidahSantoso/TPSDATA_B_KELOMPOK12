@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f7f8fa;          /* milk */
+  color: #2c3440;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(111,137,166,0.12);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #6f89a6;               /* grey blue */
+}
+
+nav a {
+  margin-right: 25px;
+  text-decoration: none;
+  color: #8a94a6;
+  font-size: 14px;
+}
+
+.nav-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #d6a6b8;    /* rose dust */
+  color: #6b4456;
+}
+
+/* ================= HERO ================= */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 80px;
+  background: linear-gradient(
+    120deg,
+    #f7f8fa,
+    #eef3f7
+  );
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 56px;
+  line-height: 1.1;
+  color: #2c3440;
+}
+
+.hero-btn a {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+/* BUTTON */
+.btn-primary {
+  background: #6f89a6;
+  color: #ffffff;
+}
+
+.btn-outline {
+  background: #ffffff;
+  border: 1px solid #d6a6b8;
+  color: #6b4456;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 25px;
+}
+
+/* ================= FLOATING CARDS ================= */
+.floating-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: -60px;
+}
+
+.float-card {
+  background: #ffffff;
+  padding: 30px;
+  width: 220px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(111,137,166,0.16);
+}
+
+/* ================= SERVICES ================= */
+.services {
+  padding: 100px 80px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 16px rgba(111,137,166,0.14);
+}
+
+/* EXIT / WARNING */
+.exit {
+  background: #f3e6ec;          /* soft rose */
+  color: #8b4f68;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #2c3440;
+  color: #ffffff;
+  padding: 50px 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

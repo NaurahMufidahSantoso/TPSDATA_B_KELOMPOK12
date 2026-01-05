@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Ceria Pets</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="logo">🐾</span>
+      <div>
+        <h2>Ceria Pets</h2>
+        <small>Klinik Hewan</small>
+      </div>
+    </div>
+
+    <ul class="menu">
+      <li class="active" data-page="dashboard">🏠 Dashboard</li>
+      <li data-page="antrian">⏳ Antrian</li>
+      <li data-page="daftar">📝 Pendaftaran Pasien</li>
+      <li data-page="jadwal">📅 Jadwal Dokter</li>
+
+      <li data-page="rekam" class="admin-only">📁 Rekam Medis</li>
+      <li data-page="diagnosa" class="admin-only">🩺 Update Diagnosa</li>
+      <li data-page="rawat" class="admin-only">🏥 Rawat Inap</li>
+
+    </ul>
+
+    <button class="logout-btn" onclick="logout()">Keluar</button>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page active">
+
+  <!-- HEADER -->
+  <div class="dashboard-header">
+    <h1>Selamat Siang, <b>dr. Hana!</b></h1>
+    <p>Anda memiliki <b>3 pasien</b> menunggu.</p>
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="dashboard-stats">
+
+    <div class="stat-card">
+      <span>Total Pasien Hari Ini</span>
+      <h2 id="totalPasien">25</h2>
+    </div>
+
+    <div class="stat-card">
+      <span>Rawat Inap Aktif</span>
+      <h2 id="rawatAktif">6</h2>
+    </div>
+
+    <div class="stat-card">
+      <span>Janji Temu Tersedia</span>
+      <h2 id="slotJanji">8</h2>
+    </div>
+
+    <div class="stat-card danger">
+      <span>Stok Obat Kritis</span>
+      <h2 id="stokKritis">3</h2>
+    </div>
+
+  </div>
+
+  <!-- GRID UTAMA -->
+  <div class="dashboard-main">
+
+    <!-- STATUS ANTRIAN -->
+    <div class="card queue-card">
+      <h3>Status Antrian</h3>
+
+      <div class="queue-content">
+        <div class="queue-circle">
+          <span id="queueCount">3</span>
+          <small>menunggu</small>
+        </div>
+
+        <div class="queue-info">
+          <p class="active">
+            <span class="dot green"></span>
+            Sedang diperiksa:
+          </p>
+          <b id="currentPatient">Buddy (Anjing)</b>
+
+          <p class="waiting">
+            Menunggu: Kitty, Hammy
+          </p>
+
+          <button class="primary-btn">
+            Panggil Pasien Berikutnya
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAFIK -->
+    <div class="card">
+      <h3>Tren Kunjungan Hari Ini</h3>
+      <div class="chart-placeholder">
+        (grafik nanti dari JS)
+      </div>
+    </div>
+
+    <!-- JADWAL DOKTER -->
+    <div class="card">
+      <h3>Jadwal Dokter Aktif</h3>
+
+      <ul class="doctor-list">
+        <li>dr. Hana <span>Bedah</span></li>
+        <li>dr. Rio <span>Umum</span></li>
+        <li>dr. Sita <span>Unduh</span></li>
+      </ul>
+    </div>
+
+    <!-- DISTRIBUSI -->
+    <div class="card">
+      <h3>Distribusi Pasien</h3>
+
+      <ul class="distribution">
+        <li><span class="dot blue"></span> Anjing (55%)</li>
+        <li><span class="dot green"></span> Kucing (35%)</li>
+        <li><span class="dot gray"></span> Lainnya (10%)</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ANTRIAN -->
+    <section id="antrian" class="page">
+
+  <h1 class="page-title">Antrian Pemeriksaan</h1>
+  <p class="page-sub">Pantau status antrian pemeriksaan hewan</p>
+
+  <div class="antrian-layout">
+
+    <!-- KIRI: STATUS SAAT INI -->
+    <div class="card antrian-status">
+
+      <div class="status-header">
+        <span class="dot"></span>
+        <span>Sedang Diperiksa</span>
+      </div>
+
+      <div class="patient-card">
+        <img src="klinikhewan.jpg" alt="Hewan">
+
+        <h2 id="currentPatient">Buddy (Anjing)</h2>
+        <p class="queue-code">Kode Antrian</p>
+        <h1 class="queue-number">A-005</h1>
+
+        <div class="status-actions admin-only">
+          <button class="btn-primary" onclick="callNext()">
+            🔊 Panggil Antrian Berikutnya
+          </button>
+        </div>
+
+        <div class="queue-position">
+          <div class="mini-donut" id="donut"></div>
+          <p>Posisi <b><span id="queueCount">3</span></b> dari total</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KANAN: LIST ANTRIAN -->
+    <div class="card antrian-list">
+
+      <div class="antrian-info">
+        <div class="info-box">
+          <span>Estimasi Tunggu</span>
+          <b>20 menit</b>
+        </div>
+        <div class="info-box">
+          <span>Total Antrian</span>
+          <b id="totalQueue">16</b>
+        </div>
+        <div class="info-box">
+          <span>Sisa Antrian</span>
+          <b id="queueCount">3</b>
+        </div>
+      </div>
+
+      <h3>Daftar Antrian</h3>
+
+      <ul id="queueList" class="queue-table">
+        <!-- Diisi otomatis JS -->
+      </ul>
+
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- DAFTAR -->
+<!-- DAFTAR -->
+<section id="daftar" class="page pendaftaran">
+
+  <h1 class="page-title">Pendaftaran Pasien Hewan</h1>
+  <p class="page-sub">Isi data pasien sebelum pemeriksaan</p>
+
+  <div class="pendaftaran-card pendaftaran-grid">
+
+    <!-- KIRI: FORM -->
+    <div class="pendaftaran-form">
+
+      <div class="form-group">
+        <label>Nama Pemilik</label>
+        <input placeholder="Masukkan nama lengkap pemilik">
+      </div>
+
+      <div class="form-group">
+        <label>Nama Hewan</label>
+        <input id="namaPasien" placeholder="Masukkan nama hewan">
+      </div>
+
+      <div class="form-group">
+        <label>Jenis Hewan</label>
+        <input id="jenisPasien" placeholder="Anjing / Kucing / dll">
+      </div>
+
+      <div class="form-group">
+        <label>Keluhan</label>
+        <textarea placeholder="Jelaskan keluhan hewan..."></textarea>
+      </div>
+
+      <button class="primary-btn" onclick="enqueuePatient()">
+        Daftarkan Pasien
+      </button>
+
+    </div>
+
+    <!-- KANAN: PRIORITAS -->
+    <div class="pendaftaran-priority">
+
+      <h4>Prioritas Pemeriksaan</h4>
+
+      <label class="priority-item p1">
+        <input type="radio" name="priority" value="1">
+        <div>
+          <b>Prioritas 1</b>
+          <span>Sangat Mendesak</span>
+        </div>
+      </label>
+
+      <label class="priority-item p2">
+        <input type="radio" name="priority" value="2">
+        <div>
+          <b>Prioritas 2</b>
+          <span>Mendesak</span>
+        </div>
+      </label>
+
+      <label class="priority-item p3">
+        <input type="radio" name="priority" value="3">
+        <div>
+          <b>Prioritas 3</b>
+          <span>Normal</span>
+        </div>
+      </label>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- JADWAL DOKTER -->
+<!-- JADWAL DOKTER -->
+<section id="jadwal" class="page jadwal-page">
+
+  <h1 class="page-title">Jadwal Dokter Hewan</h1>
+
+  <!-- JUMLAH DOKTER -->
+  <p class="jadwal-count">
+    Menampilkan <b><span id="doctorCount">0</span></b> dokter
+  </p>
+
+  <!-- FILTER -->
+  <div class="jadwal-filter">
+    <input type="date" id="filterTanggal">
+    <select id="filterDokter">
+      <option value="all">Semua Dokter</option>
+      <option value="umum">Dokter Hewan Umum</option>
+      <option value="kecil">Spesialis Hewan Kecil</option>
+      <option value="eksotis">Reptil & Eksotis</option>
+    </select>
+  </div>
+
+  <!-- GRID DOKTER (DIISI JS) -->
+  <div class="jadwal-grid"></div>
+
+</section>
+
+<!-- REKAM MEDIS -->
+<section id="rekam" class="page rekam-page">
+
+  <h1 class="page-title">Rekam Medis Hewan</h1>
+
+  <!-- HEADER -->
+  <div class="rekam-top">
+
+    <div class="rekam-pasien-card">
+      <img src="klinikhewan.jpg" alt="Hewan">
+      <div class="rekam-pasien-info">
+        <h3>Miko <span class="status aktif">Aktif</span></h3>
+        <p><b>Pemilik:</b> Budi Santoso</p>
+        <p><b>Jenis:</b> Kucing (Domestik)</p>
+        <p><b>Umur:</b> 3 Tahun</p>
+        <span class="alert-tag">Alergi Obat: Penicillin</span>
+      </div>
+    </div>
+
+    <div class="rekam-tools">
+      <input type="text" placeholder="Cari nama hewan">
+      <input type="date">
+      <button class="primary-btn">+ Tambah Rekam Medis</button>
+      <button class="btn-outline">Cetak Resep</button>
+    </div>
+
+  </div>
+
+  <!-- TIMELINE -->
+  <h3 class="section-sub">Timeline Riwayat Medis</h3>
+
+  <div class="rekam-timeline">
+
+    <div class="timeline-item">
+      <span class="timeline-dot"></span>
+      <div class="timeline-card done">
+        <div class="timeline-date">20 Oktober 2025</div>
+        <ul>
+          <li><b>Keluhan:</b> Nafsu makan menurun, lesu</li>
+          <li><b>Diagnosis:</b> ISPA</li>
+          <li><b>Dokter:</b> Dr. Siti Aminah</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-dot"></span>
+      <div class="timeline-card lanjut">
+        <div class="timeline-date">15 Agustus 2025</div>
+        <ul>
+          <li><b>Diagnosis:</b> Dermatitis alergi</li>
+          <li><b>Tindakan:</b> Salep & shampoo khusus</li>
+          <li><b>Dokter:</b> Dr. Andi Pratama</li>
+        </ul>
+        <button class="mini-btn">Cetak Resep</button>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-dot"></span>
+      <div class="timeline-card vaksin">
+        <div class="timeline-date">10 Januari 2025</div>
+        <ul>
+          <li><b>Vaksinasi:</b> FVRCP</li>
+          <li><b>Dokter:</b> Dr. Hana</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="rawat" class="page">
+
+  <h1 class="page-title">Rawat Inap Hewan</h1>
+
+  <!-- TOOLBAR -->
+  <div class="rawat-toolbar soft-card">
+    <input class="search" placeholder="Cari nama hewan...">
+
+    <select>
+      <option>Filter Status</option>
+      <option>Dirawat</option>
+      <option>Observasi</option>
+      <option>Pulang</option>
+    </select>
+
+    <select>
+      <option>Filter Ruangan</option>
+      <option>Ruang Kucing</option>
+      <option>Ruang Anjing</option>
+      <option>Ruang Eksotis</option>
+    </select>
+
+    <div class="toolbar-actions">
+      <button class="btn-outline">Lihat Detail</button>
+      <button class="primary-btn">Tambah Rawat Inap</button>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="rawat-grid">
+
+    <!-- CARD -->
+    <div class="rawat-card bg-green">
+      <h3>Milo <span>(Kucing, 3 Tahun)</span></h3>
+
+      <div class="rawat-info">
+        <p><b>Nama Pemilik</b><br>Ibu Rina</p>
+        <p><b>Kandang / Ruangan</b><br>Ruang Kucing A - K1</p>
+        <p><b>Tanggal Masuk</b><br>18 Nov 2024</p>
+        <p><b>Estimasi Keluar</b><br>22 Nov 2024</p>
+      </div>
+
+      <button class="status-btn green">Dirawat</button>
+    </div>
+
+    <div class="rawat-card bg-blue">
+      <h3>Bruno <span>(Anjing, 5 Tahun)</span></h3>
+
+      <div class="rawat-info">
+        <p><b>Nama Pemilik</b><br>Bapak Budi</p>
+        <p><b>Kandang / Ruangan</b><br>Ruang Anjing Besar - B3</p>
+        <p><b>Tanggal Masuk</b><br>20 Nov 2024</p>
+        <p><b>Estimasi Keluar</b><br>25 Nov 2024</p>
+      </div>
+
+      <button class="status-btn blue">Observasi</button>
+    </div>
+
+    <div class="rawat-card bg-gray">
+      <h3>Luna <span>(Kelinci, 1 Tahun)</span></h3>
+
+      <div class="rawat-info">
+        <p><b>Nama Pemilik</b><br>Kak Sarah</p>
+        <p><b>Kandang / Ruangan</b><br>Ruang Eksotis - E2</p>
+        <p><b>Tanggal Masuk</b><br>21 Nov 2024</p>
+        <p><b>Tanggal Keluar</b><br>23 Nov 2024</p>
+      </div>
+
+      <button class="status-btn gray">Pulang</button>
+    </div>
+
+  </div>
+</section>
+
+
+
+    <!-- DIAGNOSA -->
+<section id="diagnosa" class="page admin-only">
+
+  <h1 class="page-title">Operasi & Tindakan</h1>
+
+  <div class="diagnosa-layout-advanced">
+
+    <!-- ================= LEFT ================= -->
+    <div class="diag-left">
+
+      <!-- SEARCH -->
+      <input class="search" placeholder="Search pasien...">
+
+      <!-- KALENDER -->
+      <div class="card">
+        <h4>Jadwal Operasi</h4>
+        <div class="calendar-grid">
+          <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+          <span></span><span></span><span>1</span><span>2</span><span>3</span><span class="active">4</span><span>5</span>
+          <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span class="active">11</span><span>12</span>
+        </div>
+      </div>
+
+      <!-- STATUS RUANG -->
+      <div class="card">
+        <h4>Status Ruang Operasi</h4>
+        <div class="status-row">
+          <span class="dot green"></span> Tersedia
+          <span class="dot red"></span> Terisi
+        </div>
+      </div>
+
+      <!-- ANTRIAN TINDAKAN -->
+      <div class="card">
+        <h4>Antrian Tindakan Luka</h4>
+
+        <div class="queue-item">
+          <img src="klinikhewan.jpg">
+          <div>
+            <b>Buddy</b>
+            <p>Luka Gigitan</p>
+          </div>
+          <button class="mini-btn">Panggil</button>
+        </div>
+
+        <div class="queue-item">
+          <img src="klinikhewan.jpg">
+          <div>
+            <b>Mimi</b>
+            <p>Luka Terbuka</p>
+          </div>
+          <button class="mini-btn">Panggil</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= CENTER ================= -->
+    <div class="diag-center">
+
+      <div class="card">
+        <h3>Jadwal Operasi Hari Ini</h3>
+
+        <div class="operation-item">
+          <img src="klinikhewan.jpg">
+          <div>
+            <b>Buddy</b>
+            <p>Sterilisasi</p>
+            <small>09.00 - 10.30</small>
+          </div>
+          <span class="status done">Selesai</span>
+        </div>
+
+        <div class="operation-item">
+          <img src="klinikhewan.jpg">
+          <div>
+            <b>Sterilisasi</b>
+            <p>Menunggu</p>
+            <small>10.30 - 11.30</small>
+          </div>
+          <span class="status wait">Menunggu</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= RIGHT ================= -->
+    <div class="diag-right">
+
+      <!-- JADWAL KONTROL -->
+      <div class="card">
+        <h4>Jadwal Kontrol Harian</h4>
+        <ul class="control-list">
+          <li>✔ Obat Pagi (08.00)</li>
+          <li>✔ Makan Siang (12.00)</li>
+          <li>✔ Obat Malam (20.00)</li>
+        </ul>
+      </div>
+
+      <!-- CHECKLIST -->
+      <div class="card">
+        <h4>Checklist Pra-Operasi</h4>
+        <label><input type="checkbox" checked> Alat Steril</label>
+        <label><input type="checkbox" checked> Ambulans Siap</label>
+        <label><input type="checkbox"> Persetujuan Pemilik</label>
+      </div>
+
+      <!-- ACTION -->
+      <button class="primary-btn full">
+        Panggil Antrian Tindakan
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+    
+
+
+  </main>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
