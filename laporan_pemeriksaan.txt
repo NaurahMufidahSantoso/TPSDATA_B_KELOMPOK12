@@ -1,0 +1,150 @@
+==============================================
+        LAPORAN PEMERIKSAAN PASIEN
+          KLINIK HEWAN CERIA PETS
+==============================================
+Tanggal        : 19-12-2025
+Dokter         : Dokter Jaga
+----------------------------------------------
+ID Pasien      : 1
+Nama Hewan     : boby
+Jenis Hewan    : anjing
+Layanan        : Pemeriksaan
+Prioritas      : 2
+----------------------------------------------
+Keluhan:
+- Demam
+----------------------------------------------
+Hasil Pemeriksaan:
+- Rabies
+----------------------------------------------
+Tindakan Medis:
+- Vaksin
+----------------------------------------------
+Status Akhir   : SELESAI
+==============================================
+
+==============================================
+        LAPORAN PEMERIKSAAN PASIEN
+          KLINIK HEWAN CERIA PETS
+==============================================
+Tanggal        : 19-12-2025
+Dokter         : Dokter Jaga
+----------------------------------------------
+ID Pasien      : 2
+Nama Hewan     : yuyu
+Jenis Hewan    : klinci
+Layanan        : Pemeriksaan
+Prioritas      : 2
+----------------------------------------------
+Keluhan:
+- patah
+----------------------------------------------
+Hasil Pemeriksaan:
+- patah_tulang
+----------------------------------------------
+Tindakan Medis:
+- Rawat_inap
+----------------------------------------------
+Status Akhir   : SELESAI
+==============================================
+
+==============================================
+        LAPORAN PEMERIKSAAN PASIEN
+          KLINIK HEWAN CERIA PETS
+==============================================
+Tanggal        : 19-12-2025
+Dokter         : Dokter Jaga
+----------------------------------------------
+ID Pasien      : 3
+Nama Hewan     : momo
+Jenis Hewan    : kucing
+Layanan        : Pemeriksaan
+Prioritas      : 1
+----------------------------------------------
+Keluhan:
+- rabies
+----------------------------------------------
+Hasil Pemeriksaan:
+- pembersihan_luka
+----------------------------------------------
+Tindakan Medis:
+- pmbersihan
+----------------------------------------------
+Status Akhir   : SELESAI
+==============================================
+
+==============================================
+        LAPORAN PEMERIKSAAN PASIEN
+          KLINIK HEWAN CERIA PETS
+==============================================
+Tanggal        : 5-1-2026
+Dokter         : Dokter Jaga
+----------------------------------------------
+ID Pasien      : 3
+Nama Hewan     : Milo
+Jenis Hewan    : Kucing
+Layanan        : Pemeriksaan
+Prioritas      : 2
+----------------------------------------------
+Keluhan:
+- Muntah
+----------------------------------------------
+Hasil Pemeriksaan:
+- gangguan_pencernaan
+----------------------------------------------
+Tindakan Medis:
+- suntik
+----------------------------------------------
+Status Akhir   : SELESAI
+==============================================
+
+==============================================
+        LAPORAN PEMERIKSAAN PASIEN
+          KLINIK HEWAN CERIA PETS
+==============================================
+Tanggal        : 5-1-2026
+Dokter         : Dokter Jaga
+----------------------------------------------
+ID Pasien      : 6
+Nama Hewan     : Max
+Jenis Hewan    : Kucing
+Layanan        : Pemeriksaan
+Prioritas      : 1
+----------------------------------------------
+Keluhan:
+- Infeksi mata
+----------------------------------------------
+Hasil Pemeriksaan:
+- patah
+----------------------------------------------
+Tindakan Medis:
+- operasi
+----------------------------------------------
+Status Akhir   : SELESAI
+==============================================
+
+==============================================
+        LAPORAN PEMERIKSAAN PASIEN
+          KLINIK HEWAN CERIA PETS
+==============================================
+Tanggal        : 5-1-2026
+Dokter         : Dokter Jaga
+----------------------------------------------
+ID Pasien      : 12
+Nama Hewan     : Buddy
+Jenis Hewan    : Anjing
+Layanan        : Pemeriksaan
+Prioritas      : 1
+----------------------------------------------
+Keluhan:
+- Demam tinggi
+----------------------------------------------
+Hasil Pemeriksaan:
+- luka_ringan
+----------------------------------------------
+Tindakan Medis:
+- bersihluka
+----------------------------------------------
+Status Akhir   : SELESAI
+==============================================
+
