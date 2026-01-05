@@ -1,0 +1,3 @@
+SISTEM KLINIK HEWAN CERIA PETS
+kelompok 12
+Sistem Informasi Klinik Hewan Ceria Pets merupakan aplikasi berbasis C++ yang dirancang untuk mengelola operasional klinik hewan secara terstruktur dan efisien. Sistem ini bertujuan mempermudah pengelolaan data pasien dan pemilik, pengaturan antrian pemeriksaan, pencatatan diagnosa dan tindakan medis, rawat inap, serta proses pembayaran dan pembuatan laporan. Dalam implementasinya, sistem memanfaatkan Circular Linked List, Queue, Priority Queue, dan Array sebagai struktur data utama, dengan penyimpanan data berbasis file teks untuk menjaga konsistensi dan kerapihan administrasi klinik.
